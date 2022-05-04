@@ -1,24 +1,23 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Starred from "./pages/Starred";
 
 function App() {
   return (
-    <>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            This is Homepage
-          </Route>
-          <Route exact path="/starred">
-            This is starred
-          </Route>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/starred">
+          <Starred />
+        </Route>
 
-          <Route>This Is 404 Page</Route>
-        </Switch>
-      </Router>
-    </>
+        <Route>Page not Found</Route>
+      </Switch>
+    </Router>
   );
 }
 
